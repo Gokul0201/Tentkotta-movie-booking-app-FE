@@ -15,48 +15,7 @@ const BookingTicket = () => {
   const {user,selectedMovie,cinemas,setCinemas,location, seats,setSeats,row,setRow,setMovietime,movieTime}=DataState();
   console.log(user);
 
-  let sum = 0;
-  let initPayment = async (data) => {
-    try {
-      const options = {
-        key: "rzp_live_QXPDBeMebeyG9N",
-        amount: data.amount,
-        currency: data.currency,
-        name: "Orders",
-        description: "Test Transcation",
-        handler: async (response) => {
-          try {
-            let res = await axios.post(
-              `${BASE_URL}api/payment/verify`,
-              response
-            );
-            console.log(res.data);
-          } catch (error) {
-            console.log(error);
-          }
-        },
-        theme: {
-          color: "blue",
-        },
-      };
-      const rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  let handlePayment = async (value) => {
-    console.log(value);
-    try {
-      let res = await axios.post(`${BASE_URL}api/payment/order`, {
-        amount: value,
-      });
-      console.log(res.data);
-      initPayment(res.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
 
   
   const seatsfun =(newseat)=>{
@@ -358,8 +317,7 @@ const BookingTicket = () => {
          
          <div className='bs-1'>
         <button className='btn btn-primary' onClick={()=>sendTicket()}><i className="fa-solid fa-ticket"></i> &nbsp;Book Tickects</button>
-         
-        <button className='btn btn-primary' onClick={()=>handlePayment()}><i className="fa-solid fa-ticket"></i> &nbsp;payment</button></div>
+         </div>
 
        </div>
      </div>

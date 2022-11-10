@@ -11,7 +11,7 @@ const Authtentication = () => {
   return <>
      <div className='log-main'>
        <div className='title'>
-         make<span>My</span>show
+      Tentkotta
         </div>
      <div className='auth-page '>
        
