@@ -52,6 +52,7 @@ const Register = () => {
         position:"top"
     });
       localStorage.setItem('bookingUser',JSON.stringify(data));
+      localStorage.setItem("role",JSON.stringify(data.name))
       const bookingUser = JSON.parse(localStorage.getItem("bookingUser"));
       setUser(bookingUser);
       setLoading(false)
@@ -104,7 +105,7 @@ const Register = () => {
   }
   return <>
      <div className="mb-2">
-        <label  className="form-label">Name</label>
+        <label  className="form-label">UserName</label>
          <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setName(e.target.value)} required/>
      </div>
      <div className="mb-2">

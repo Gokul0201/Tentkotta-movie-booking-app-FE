@@ -9,13 +9,17 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
   let navigate = useNavigate();
   const {user,setUser,setLocation}=DataState()
+  const role =localStorage.getItem("role")
+  console.log(role)
   let logout = ()=>{
-
-    localStorage.removeItem('bookingUser')
+   localStorage.removeItem('bookingUser')
+   localStorage.removeItem('role')
     setUser('');
     navigate("/")
-
   }
+
+
+  
   return <>
   <div className='contain'>
      <Box
@@ -56,11 +60,29 @@ const Header = () => {
             </Link>
             </Tooltip>
           </Menu>
+          
+          
+          {role === "admin"?( 
+          <Menu>
+             <Link to="/add-movie">
+             <Tooltip hasArrow label='Add-Movie' bg='gray' color='white'>
+                 <MenuButton p={1} pr={6}>
+                   <h3 style={{fontSize:"20px",color:"white"}}>Add movie</h3>
+                 
+    
+                 </MenuButton>
+                 </Tooltip>
+                 </Link>
+             </Menu>
+            
+             ):null} 
+
+
              <Menu>
              <Link to="/tickets">
              <Tooltip hasArrow label='View Tickets' bg='gray' color='white'>
                  <MenuButton p={1} pr={6}>
-                   <h3 style={{fontSize:"20px",color:"white"}}><i className="fa-solid fa-ticket" style={{color:"red",fontSize:"18px",marginRight:"10px"}}></i>Tickects</h3>
+                   <h3 style={{fontSize:"20px",color:"white"}}><i className="fa-solid fa-ticket" style={{color:"red",fontSize:"18px",marginRight:"10px"}}></i>Tickets</h3>
                  
                  {/* <span className="tick-count">{tickets.length}</span> */}
                  </MenuButton>
@@ -72,6 +94,8 @@ const Header = () => {
                  </Tooltip>
                  </Link>
              </Menu>
+            
+             
              <Menu p="-10px">
                  <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
                     <Avatar size="sm"

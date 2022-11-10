@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import ProtectRoute from './Auth/ProtectRoute';
+import AddMovie from './Components/AddMovie';
 import Authtentication from './Components/Authtentication';
 import BookingTicket from './Components/BookingTicket';
 import HomePage from './Components/HomePage';
@@ -33,6 +34,7 @@ function App() {
         <Route path='/search' element={<SearchBar/>}/>
         <Route path='/booking' element={<BookingTicket/>}/>
         <Route path='/tickets' element={<MyTickets/>}/>
+        <Route path='/add-movie' element={<AddMovie/>}/>
       </Route>
     </Routes>
   </Router>
