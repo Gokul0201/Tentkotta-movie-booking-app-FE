@@ -40,7 +40,7 @@ const AddMovie = () => {
             duration
       }
       let res=await axios.post(`${BASE_URL}postmovie`,data)
-      if (res.status === 201)
+      if (res.status === 200)
        navigate('/home')
     }
 
