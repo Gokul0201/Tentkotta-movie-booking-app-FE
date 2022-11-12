@@ -36,7 +36,7 @@ const ProfileModel =({children})=> {
            src={user?user.pic:""}
            alt={user?user.name:""}
            />
-           <Text>Email : {user?user.email:"guest"}</Text>
+           <Text>Email : {user?user.name:"guest"}</Text>
           </ModalBody>
 
           <ModalFooter>

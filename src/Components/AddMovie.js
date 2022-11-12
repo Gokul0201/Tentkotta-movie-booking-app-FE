@@ -36,7 +36,7 @@ const AddMovie = () => {
             about,
             poster,
             categori,
-            like,
+            // like,
             duration
       }
       let res=await axios.post(`${BASE_URL}postmovie`,data)
@@ -64,43 +64,40 @@ const AddMovie = () => {
  <div className='col-lg-12'>
       <div className="mb-3">
         <label  className="form-label">MovieName</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setmovieName(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Enter Movie Name" onChange={(e)=>setmovieName(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">Movie Type</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setType(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Enter Type (like U ,U A,A)" onChange={(e)=>setType(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">Trailer</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setTrailer(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Paste Trailer Link" onChange={(e)=>setTrailer(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">Language</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setLanguage(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Enter Language" onChange={(e)=>setLanguage(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">Date</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setreleaseDate(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Enter Release Date" onChange={(e)=>setreleaseDate(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">About</label>
-         <textarea type="textarea" className="form-control" placeholder="Your Name" onChange={(e)=>setAbout(e.target.value)} required/>
+         <textarea type="textarea" className="form-control" placeholder="About Movie" onChange={(e)=>setAbout(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">Poster</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setPoster(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Paste poster link" onChange={(e)=>setPoster(e.target.value)} required/>
      </div>
      <div className="mb-3">
         <label  className="form-label">Category</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setCategori(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Enter Movie Category" onChange={(e)=>setCategori(e.target.value)} required/>
      </div>
-     <div className="mb-3">
-        <label  className="form-label">Like</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setlike(e.target.value)} required/>
-     </div>
+     {/*   */}
      <div className="mb-3">
         <label  className="form-label">Duration</label>
-         <input type="text" className="form-control" placeholder="Your Name" onChange={(e)=>setDuration(e.target.value)} required/>
+         <input type="text" className="form-control" placeholder="Enter Duration of Movie" onChange={(e)=>setDuration(e.target.value)} required/>
      </div>
      <Button 
     // isLoading={loading}
