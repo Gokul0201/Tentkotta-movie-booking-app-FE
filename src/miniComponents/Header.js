@@ -96,22 +96,24 @@ const Header = () => {
              </Menu>
             
              
-             <Menu p="-10px">
-                 <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+             {/* <Menu p="-10px"> */}
+                 {/* <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
                     <Avatar size="sm"
                      cursor="pointer"
                       src={user?user.pic:""}
                       />  
                  </MenuButton>
-                 <MenuList>
+                 <MenuList> */}
                 
-                   <ProfileModel>
-                   <MenuItem> My Profile</MenuItem>
-                 </ProfileModel>
-                  <MenuItem onClick={()=>logout()}>LogOut</MenuItem>
+                   {/* <ProfileModel> */}
+                   {/* <MenuItem> My Profile</MenuItem>
+                 </ProfileModel> */}
+                  {/* <MenuItem onClick={()=>logout()}>LogOut</MenuItem> */}
 
-                 </MenuList>
-             </Menu>
+                 {/* </MenuList> */}
+               
+             {/* </Menu> */}
+             <button style={{fontSize:"20px",color:"white"}} onClick={()=>logout()}>Logout</button>
          </div>
 
      </Box>
